@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Post from "./components/Post";
+import Posts from "./components/Posts";
+import Blog from "./data.json"
+import React from "react"
 
 function App() {
+  const [post, setPost] = React.useState(Blog.posts[0])
+
+  const selectPost = (selected) => {
+    setPost(selected)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Blog</h1>
+      <Posts posts={Blog.posts}select={selectPost}/>
+      <Post post={post}/>
     </div>
   );
 }
