@@ -12,19 +12,12 @@ const tag = Blog.tags.find(t => t.id == tagId);
 const postsForTag = Blog.posts.filter(post => post.tags.includes(tagId));
 //const postsForTag = Blog.posts.filter(post => post.title != "");
 //console.log(postsForTag);
-  const [post, setPost] = React.useState(postsForTag[0])
-
-  const selectPost = (selected) => {
-    setPost(selected)
-  }
-
 
 
 return (
 <div>
 <h1>Просмотр постов по тегу {tag.tag}</h1>
-      <Posts posts={postsForTag} select={selectPost}/>
-      <Post post={post}/>
+      <Posts posts={postsForTag} />
 </div>
 )
 }

@@ -1,11 +1,14 @@
 import React from "react";
+import Blog from "../data.json"
 
 const Post = (props) => {
   return (
     <div className="post">
-      <h3>{props.post.title}</h3>
-      <h3>{new Intl.DateTimeFormat('ru-RU', {dateStyle: 'full', timeStyle: 'short'}).format(props.post.timestamp * 1000)}</h3>
       <p dangerouslySetInnerHTML={{__html: props.post.text}}/>
+{
+Blog.channel_username &&
+<a href={`https://t.me/${Blog.channel_username}/${props.post.id}`} target="blank">Читайте в Telegram</a>
+}
     </div>
   );
 };
