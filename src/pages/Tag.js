@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 function Tag() {
         const params = useParams();
         const tagId = parseInt(params.id);
-//const tag = Blog.tags.find(t => t.id == tagId);
+const tag = Blog.tags.find(t => t.id == tagId);
 const postsForTag = Blog.posts.filter(post => post.tags.includes(tagId));
 //const postsForTag = Blog.posts.filter(post => post.title != "");
 //console.log(postsForTag);
@@ -22,7 +22,7 @@ const postsForTag = Blog.posts.filter(post => post.tags.includes(tagId));
 
 return (
 <div>
-<h1>{postsForTag.length}</h1>
+<h1>Просмотр постов по тегу {tag.tag}</h1>
       <Posts posts={postsForTag} select={selectPost}/>
       <Post post={post}/>
 </div>
