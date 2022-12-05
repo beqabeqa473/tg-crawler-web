@@ -31,6 +31,7 @@ const Pagination = props => {
 
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
+<nav aria-label="Постраничная навигация">
     <ul>
       <li>
         <button  disabled={currentPage === 1} onClick={onPrevious}>Назад</button>
@@ -50,6 +51,7 @@ const Pagination = props => {
         <button disabled={currentPage === lastPage} onClick={onNext}>В перед</button>
       </li>
     </ul>
+</nav>
   );
 };
 
