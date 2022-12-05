@@ -17,7 +17,7 @@ if (postTitleHeading.current != null)
     <div className="post">
 {
 props.showLink &&
-      <h2><Link to={`/post/${props.post.id}`} state={{post: props.post}}>{props.post.title}</Link></h2> || 
+      <h2><Link to={`/post/${props.post.id}`}>{props.post.title}</Link></h2> || 
       <h2 tabindex="-1" ref={postTitleHeading}>{props.post.title}</h2>
 }
       <p>{new Intl.DateTimeFormat('ru-RU', {dateStyle: 'full', timeStyle: 'short'}).format(props.post.timestamp * 1000)}</p>
