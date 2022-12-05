@@ -7,7 +7,7 @@ import React from "react"
 function PostPage() {
   const params = useParams()
   const postId = parseInt(params.id);
-const post = Blog.posts.filter(p => p.id === postId)[0];
+const post = Blog.posts.find(p => p.id === postId);
   return (
     <div className="SinglePost">
       <Post post={post} showLink={false}/>
