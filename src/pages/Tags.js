@@ -14,6 +14,8 @@ return 1;
 return 0;
 });
 
+const postCount = (tagID) => Blog.posts.filter(post => post.tags.includes(tagID)).length;
+
 function Tags() {
 return (
 <div>
@@ -22,7 +24,7 @@ return (
 {
   Blog.tags.map((tag) => (
       <li key={tag.id}>
-<Link to={`/tags/${tag.id}`}>{tag.tag}</Link>
+<Link to={`/tags/${tag.id}`}>{tag.tag} {postCount(tag.id)} постов</Link>
 </li>
   )
 )
