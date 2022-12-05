@@ -14,9 +14,7 @@ const Posts = (props) => {
 
   const postsJSX = currentPosts.map((post, index) => (
     <div className="summary">
-      <h2>{post.title}</h2>
-      <p>{new Intl.DateTimeFormat('ru-RU', {dateStyle: 'full', timeStyle: 'short'}).format(post.timestamp * 1000)}</p>
-      <Post post={post}/>
+      <Post post={post} showLink={true}/>
     </div>
   ));
 
